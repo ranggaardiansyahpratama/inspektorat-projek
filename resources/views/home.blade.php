@@ -511,8 +511,8 @@
     </div>
 </section> --}}
 
-<!-- Services Section -->
-<section class="services-section">
+{{-- Services Section - HIDDEN --}}
+{{-- <section class="services-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">Layanan Kami</h2>
@@ -554,7 +554,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <!-- News Section -->
 <section class="news-section">

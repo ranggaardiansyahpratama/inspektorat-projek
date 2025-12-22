@@ -5,38 +5,12 @@
 @push('styles')
 <!-- Google Maps CSS and Fonts -->
 <style>
-    /* Hapus margin/padding default apa pun yang mungkin membuat spasi */
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .main-content {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Pastikan tidak ada spasi di atas header halaman */
-    .page-content {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Paksa halaman untuk memulai segera setelah navbar */
-    section:first-of-type {
-         !important;
-        position: relative;
-        top: 0;
-    }
-
     .page-header {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         color: white;
         padding: 4rem 0;
         text-align: center;
         margin-bottom: 0;
-        position: relative;
-        top: 0;
     }
 
     .page-title {
@@ -55,14 +29,14 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     .contact-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 4rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         align-items: start;
     }
 
@@ -260,7 +234,7 @@
         background: #E9F8F9;
         padding: 3rem 0 2rem;
         margin-top: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 0;
         border-radius: 20px;
     }
 
@@ -550,7 +524,7 @@
 
     .office-hours {
         margin-top: 3rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     .hours-grid {
@@ -684,7 +658,7 @@
         padding: 2.5rem 2rem;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         margin-top: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         text-align: center;
         border: 1px solid rgba(30, 64, 175, 0.1);
     }
@@ -935,7 +909,7 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="page-header" style=" position: relative; top: 0;">
+<section class="page-header">
     <div class="container">
         <h1 class="page-title" data-aos="fade-up">Hubungi Kami</h1>
         <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="200">
@@ -1165,15 +1139,6 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Lokasi Inspektorat Kota Tasikmalaya">
             </iframe>
-        </div>
-        <!-- Map Info -->
-        <div class="row mt-4">
-            <div class="col-md-12 d-flex justify-content-center">
-                <div class="info-card" data-aos="fade-up" data-aos-delay="300" style="max-width: 600px;">
-                    <h4><i class="fas fa-map-marker-alt"></i> Alamat Lengkap</h4>
-                    <p>Jl. Letnan Harun No. 1, Sukamulya, Kec. Bungursari, Tasikmalaya, Jawa Barat 46151</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>

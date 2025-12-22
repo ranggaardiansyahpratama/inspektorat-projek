@@ -268,63 +268,6 @@
 <!-- Search Section -->
 <section class="regulations-container">
     <div class="container">
-        <!-- Categories -->
-        <div class="regulation-categories">
-            <div class="category-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="category-icon">
-                    <i class="fas fa-gavel"></i>
-                </div>
-                <h3 class="category-title">Undang-Undang</h3>
-                <p class="category-count">15 Dokumen</p>
-                <a href="#undang-undang" class="category-btn">Lihat Semua</a>
-            </div>
-
-            <div class="category-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="category-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3 class="category-title">Peraturan Pemerintah</h3>
-                <p class="category-count">23 Dokumen</p>
-                <a href="#pp" class="category-btn">Lihat Semua</a>
-            </div>
-
-            <div class="category-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-icon">
-                    <i class="fas fa-clipboard-list"></i>
-                </div>
-                <h3 class="category-title">Peraturan Menteri</h3>
-                <p class="category-count">18 Dokumen</p>
-                <a href="#permen" class="category-btn">Lihat Semua</a>
-            </div>
-
-            <div class="category-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="category-icon">
-                    <i class="fas fa-building"></i>
-                </div>
-                <h3 class="category-title">Peraturan Daerah</h3>
-                <p class="category-count">31 Dokumen</p>
-                <a href="#perda" class="category-btn">Lihat Semua</a>
-            </div>
-
-            <div class="category-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="category-icon">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3 class="category-title">Peraturan Wali Kota</h3>
-                <p class="category-count">42 Dokumen</p>
-                <a href="#perwali" class="category-btn">Lihat Semua</a>
-            </div>
-
-            <div class="category-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="category-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3 class="category-title">SOP & Petunjuk Teknis</h3>
-                <p class="category-count">27 Dokumen</p>
-                <a href="#sop" class="category-btn">Lihat Semua</a>
-            </div>
-        </div>
-
         <!-- Regulations List -->
         <div class="regulations-list">
             <h2 class="list-title" data-aos="fade-up">Peraturan Terbaru</h2>

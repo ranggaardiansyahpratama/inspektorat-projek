@@ -540,7 +540,7 @@
 
         /* Page Content */
         .page-content {
-            padding-top: 0;
+            padding-top: 80px;
             margin-top: 0;
             min-height: calc(100vh - 85px);
         }

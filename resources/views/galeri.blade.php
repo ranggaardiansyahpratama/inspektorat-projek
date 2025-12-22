@@ -378,6 +378,110 @@
     </div>
 </section>
 
+<!-- Instagram Feed Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <i class="fab fa-instagram text-5xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent"></i>
+                <h2 class="text-4xl font-bold text-gray-900">Instagram Kami</h2>
+            </div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+                Ikuti kegiatan terbaru Inspektorat Kota Tasikmalaya melalui Instagram kami
+            </p>
+            <a href="https://www.instagram.com/itda.kotatasikmalaya" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                <i class="fab fa-instagram text-xl"></i>
+                <span>@itda.kotatasikmalaya</span>
+                <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+        </div>
+
+        <!-- Instagram Embed Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="200">
+            
+            <!-- Instagram Post Embed 1 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <i class="fab fa-instagram text-6xl text-purple-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold mb-2">Postingan Instagram</p>
+                        <p class="text-sm text-gray-600">Kunjungi Instagram kami untuk melihat postingan terbaru</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Post Embed 2 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <div class="aspect-square bg-gradient-to-br from-pink-100 to-orange-100 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <i class="fas fa-images text-6xl text-pink-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold mb-2">Galeri Kegiatan</p>
+                        <p class="text-sm text-gray-600">Dokumentasi lengkap kegiatan Inspektorat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Post Embed 3 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <div class="aspect-square bg-gradient-to-br from-orange-100 to-purple-100 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <i class="fas fa-camera text-6xl text-orange-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold mb-2">Update Terkini</p>
+                        <p class="text-sm text-gray-600">Informasi dan berita terbaru setiap hari</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Info -->
+        <div class="mt-12 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-200" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="bg-white p-4 rounded-full shadow-lg">
+                        <i class="fab fa-instagram text-4xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Ikuti Kami di Instagram</h3>
+                        <p class="text-gray-600">Dapatkan update kegiatan dan informasi terbaru setiap hari</p>
+                    </div>
+                </div>
+                <a href="https://www.instagram.com/itda.kotatasikmalaya" target="_blank" rel="noopener noreferrer"
+                   class="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center gap-3 whitespace-nowrap">
+                    <i class="fab fa-instagram text-2xl"></i>
+                    <span>Follow Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instagram Stats -->
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-xl p-6 shadow-md text-center border-2 border-gray-100 hover:border-purple-300 transition-all duration-300">
+                <i class="fas fa-images text-3xl text-purple-600 mb-2"></i>
+                <p class="text-3xl font-bold text-gray-900 mb-1">500+</p>
+                <p class="text-sm text-gray-600">Postingan</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center border-2 border-gray-100 hover:border-pink-300 transition-all duration-300">
+                <i class="fas fa-users text-3xl text-pink-600 mb-2"></i>
+                <p class="text-3xl font-bold text-gray-900 mb-1">5K+</p>
+                <p class="text-sm text-gray-600">Pengikut</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center border-2 border-gray-100 hover:border-orange-300 transition-all duration-300">
+                <i class="fas fa-heart text-3xl text-orange-600 mb-2"></i>
+                <p class="text-3xl font-bold text-gray-900 mb-1">10K+</p>
+                <p class="text-sm text-gray-600">Likes</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center border-2 border-gray-100 hover:border-purple-300 transition-all duration-300">
+                <i class="fas fa-calendar-check text-3xl text-purple-600 mb-2"></i>
+                <p class="text-3xl font-bold text-gray-900 mb-1">Daily</p>
+                <p class="text-sm text-gray-600">Update</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Modal untuk Detail Gambar -->
 <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 modal-backdrop z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
