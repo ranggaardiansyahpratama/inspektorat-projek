@@ -79,7 +79,8 @@
     }
 
     .back-to-news {
-        margin-bottom: 2rem;
+        margin-top: 0;
+        margin-bottom: 2.5rem;
     }
 
     .back-btn {
@@ -339,14 +340,14 @@
 <!-- Article Content -->
 <section class="article-content">
     <div class="container">
-        <div class="article-container">
-            <!-- Back Button -->
-            <div class="back-to-news" data-aos="fade-up">
-                <a href="{{ route('berita.index') }}" class="back-btn">
-                    <i class="fas fa-arrow-left"></i> Kembali ke Berita
-                </a>
-            </div>
+        <!-- Back Button -->
+        <div class="back-to-news" data-aos="fade-up">
+            <a href="{{ route('berita.index') }}" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Kembali ke Berita
+            </a>
+        </div>
 
+        <div class="article-container">
             <!-- Article Image -->
             <div class="article-image" data-aos="fade-up" data-aos-delay="100">
                 @if($berita->gambar)

@@ -24,7 +24,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Protected admin routes (perlu login)
     Route::middleware('admin.auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('berita', AdminBeritaController::class);
+        Route::resource('berita', AdminBeritaController::class)->parameters([
+            'berita' => 'berita'
+        ]);
     });
 });
 
