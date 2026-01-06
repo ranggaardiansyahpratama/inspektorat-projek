@@ -7,8 +7,6 @@ tests
 phpunit.xml
 .editorconfig
 .gitattributes
-composer.lock
-package-lock.json
 README.md
 SETUP_GUIDE.md
 remotes.txt
