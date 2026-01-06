@@ -1,13 +1,17 @@
 <?php
 
-// 1. Paksa tampilkan error di level tertinggi
+// 1. Matikan limit waktu dan memori agar tidak "Closing" tiba-tiba
+ini_set('memory_limit', '512M');
+set_time_limit(0);
+
+// 2. Tampilkan semua error
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// 2. Setup folder storage di /tmp (satu-satunya tempat yang bisa ditulis di Vercel)
+// 3. Setup folder storage di /tmp (Vercel read-only fix)
 $storagePath = '/tmp/storage';
-$dirs = [
+foreach ([
     $storagePath . '/app/public',
     $storagePath . '/framework/cache/data',
     $storagePath . '/framework/sessions',
@@ -15,33 +19,39 @@ $dirs = [
     $storagePath . '/framework/views',
     $storagePath . '/bootstrap/cache',
     $storagePath . '/logs',
-];
-
-foreach ($dirs as $dir) {
-    if (!is_dir($dir)) {
-        if (!mkdir($dir, 0755, true)) {
-            die("Gagal membuat folder di /tmp: $dir");
-        }
-    }
+] as $dir) {
+    if (!is_dir($dir)) mkdir($dir, 0755, true);
 }
 
-// 3. Set Env untuk Laravel
+// 4. Set Env kritis
 putenv('APP_STORAGE=' . $storagePath);
 $_ENV['APP_STORAGE'] = $storagePath;
 
-// 4. Jalankan Laravel dengan Catch Error
+// Cegah Laravel menggunakan folder storage asli di repo
+putenv('VIEW_COMPILED_PATH=' . $storagePath . '/framework/views');
+
+// 5. Jalankan Laravel
 try {
-    // Pastikan autoload ada
-    if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
-        die("Vendor autoload tidak ditemukan! Vercel gagal menjalankan composer install.");
+    $autoload = __DIR__ . '/../vendor/autoload.php';
+    if (!file_exists($autoload)) {
+        die("<h1>Build Error</h1>Vendor autoload tidak ditemukan. Pastikan Anda sudah push composer.lock.");
     }
     
-    require __DIR__ . '/../vendor/autoload.php';
+    require $autoload;
+    
+    // Cek APP_KEY
+    if (empty(getenv('APP_KEY')) && empty($_ENV['APP_KEY'])) {
+        echo "<h1>Konfigurasi Kurang</h1>";
+        echo "<p>Anda BELUM memasukkan <b>APP_KEY</b> di Vercel Dashboard (Settings -> Environment Variables).</p>";
+        echo "<p>Silakan masukkan APP_KEY dari file .env lokal Anda ke Vercel agar aplikasi bisa didekripsi.</p>";
+        exit;
+    }
+
     require __DIR__ . '/../public/index.php';
     
 } catch (\Throwable $e) {
     echo "<h1>Laravel Gagal Booting (Vercel)</h1>";
-    echo "<p><b>Pesan:</b> " . $e->getMessage() . "</p>";
-    echo "<p><b>Lokasi:</b> " . $e->getFile() . " baris " . $e->getLine() . "</p>";
+    echo "<p><b>Pesan:</b> " . htmlentities($e->getMessage()) . "</p>";
+    echo "<p><b>File:</b> " . $e->getFile() . " baris " . $e->getLine() . "</p>";
     echo "<hr><pre>" . $e->getTraceAsString() . "</pre>";
 }
