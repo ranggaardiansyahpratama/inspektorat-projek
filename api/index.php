@@ -5,5 +5,31 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+/**
+ * Vercel's filesystem is read-only (except for /tmp).
+ * We need to move Laravel's storage and cache to /tmp.
+ */
+
+$storagePath = '/tmp/storage';
+
+$storageDirs = [
+    $storagePath . '/app/public',
+    $storagePath . '/framework/cache/data',
+    $storagePath . '/framework/sessions',
+    $storagePath . '/framework/testing',
+    $storagePath . '/framework/views',
+    $storagePath . '/bootstrap/cache',
+    $storagePath . '/logs',
+];
+
+foreach ($storageDirs as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
+    }
+}
+
+// Set environment variables for storage path
+putenv('APP_STORAGE=' . $storagePath);
+
 // Forward the request to Laravel's entry point
 require __DIR__ . '/../public/index.php';
