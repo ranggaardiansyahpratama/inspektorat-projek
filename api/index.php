@@ -30,6 +30,15 @@ foreach ($storageDirs as $dir) {
 
 // Set environment variables for storage path
 putenv('APP_STORAGE=' . $storagePath);
+$_ENV['APP_STORAGE'] = $storagePath;
 
-// Forward the request to Laravel's entry point
-require __DIR__ . '/../public/index.php';
+// Forward the request to Laravel's entry point with detailed error catching
+try {
+    require __DIR__ . '/../public/index.php';
+} catch (\Throwable $e) {
+    echo "<h1>Laravel Startup Error (Vercel)</h1>";
+    echo "<p><b>Message:</b> " . $e->getMessage() . "</p>";
+    echo "<p><b>File:</b> " . $e->getFile() . " on line " . $e->getLine() . "</p>";
+    echo "<h3>Stack Trace:</h3>";
+    echo "<pre>" . $e->getTraceAsString() . "</pre>";
+}
