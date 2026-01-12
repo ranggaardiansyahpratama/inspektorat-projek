@@ -264,13 +264,14 @@
 <section class="news-container">
     <div class="container">
         <!-- Filters -->
-        <div class="news-filters" data-aos="fade-up">
+        <!-- Filters -->
+        <!-- <div class="news-filters" data-aos="fade-up">
             <a href="#" class="filter-btn active">Semua</a>
             <a href="#" class="filter-btn">Kegiatan</a>
             <a href="#" class="filter-btn">Pengumuman</a>
             <a href="#" class="filter-btn">Audit</a>
             <a href="#" class="filter-btn">Sosialisasi</a>
-        </div>
+        </div> -->
 
         <!-- Featured News -->
         @if($berita->count() > 0)
