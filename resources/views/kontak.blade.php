@@ -921,25 +921,13 @@
 <!-- Contact Container -->
 <section class="contact-container">
     <div class="container">
-        <!-- Centered Contact Info Title -->
-        <div class="text-center mb-5">
+        <!-- Centered Contact Info Title - HIDDEN -->
+        {{-- <div class="text-center mb-5">
             <h2 class="section-title" data-aos="fade-up">Informasi Kontak</h2>
         </div>
         
         <!-- Contact Information Grid -->
         <div class="contact-info-grid">
-            {{-- <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-details">
-                    <h4>Alamat Kantor</h4>
-                    <p>Jl. Letnan Harun No. 1, Sukamulya<br>
-                    Kec. Bungursari<br>
-                    Tasikmalaya, Jawa Barat 46151</p>
-                </div>
-            </div> --}}
-
             <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-icon">
                     <i class="fas fa-phone"></i>
@@ -992,7 +980,7 @@
                     <strong>Sabtu - Minggu:</strong> Tutup</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
         <div class="contact-grid">
             <!-- Contact Form -->
