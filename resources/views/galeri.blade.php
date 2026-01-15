@@ -378,30 +378,7 @@
     </div>
 </section>
 
-<!-- Instagram Feed Section -->
-<section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Section Header -->
-        <div class="text-center mb-12" data-aos="fade-up">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <i class="fab fa-instagram text-5xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent"></i>
-                <h2 class="text-4xl font-bold text-gray-900">Instagram Kami</h2>
-            </div>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-                Ikuti kegiatan terbaru Inspektorat Kota Tasikmalaya melalui Instagram kami
-            </p>
-            <a href="https://www.instagram.com/itda.kotatasikmalaya" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                <i class="fab fa-instagram text-xl"></i>
-                <span>@itda.kotatasikmalaya</span>
-                <i class="fas fa-external-link-alt text-sm"></i>
-            </a>
-        </div>
 
-        <!-- Instagram Feed Grid dihapus sesuai permintaan -->
-    </div>
-</section>
 
 <!-- Modal untuk Detail Gambar -->
 <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 modal-backdrop z-50 hidden items-center justify-center p-4">
