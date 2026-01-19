@@ -64,32 +64,7 @@
         </div>
     </div>
 
-    <!-- Total Galeri Stats -->
-    <div class="col-xl-3 col-md-6">
-        <div class="card stat-card warning h-100">
-            <div class="card-body p-4">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="flex-grow-1">
-                        <div class="text-sm fw-medium text-muted text-uppercase tracking-wider mb-2">
-                            Total Galeri
-                        </div>
-                        <div class="d-flex align-items-baseline">
-                            <div class="h3 fw-bold text-gray-900 mb-0">{{ number_format($totalGaleri) }}</div>
-                            <div class="ms-2 text-sm text-warning">
-                                <i class="fas fa-minus me-1"></i>0%
-                            </div>
-                        </div>
-                        <div class="text-sm text-muted mt-1">dari bulan lalu</div>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <div class="rounded-lg bg-warning bg-opacity-10 p-3">
-                            <i class="fas fa-images text-warning fa-lg"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Kontak Baru Stats -->
     <div class="col-xl-3 col-md-6">

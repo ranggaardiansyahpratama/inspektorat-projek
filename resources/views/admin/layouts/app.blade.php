@@ -133,11 +133,15 @@
         .stat-card.danger::before { background: var(--danger-color); }
         
         .admin-header {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 1rem 0;
             margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         
         .page-title {
@@ -246,6 +250,33 @@
             font-weight: 600;
             color: var(--primary-color);
         }
+
+        /* Modern Dropdown */
+        .dropdown-menu {
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            margin-top: 0.5rem !important;
+        }
+
+        .dropdown-item {
+            border-radius: 0.5rem;
+            padding: 0.625rem 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--light-bg);
+            color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .dropdown-item i {
+            width: 20px;
+        }
     </style>
     
     @stack('styles')
@@ -294,24 +325,7 @@
                                     <span class="badge bg-danger bg-opacity-75 rounded-pill ms-auto">2</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-images"></i>
-                                    <span class="ms-3">Galeri</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span class="ms-3">SAKIP</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-gavel"></i>
-                                    <span class="ms-3">Peraturan</span>
-                                </a>
-                            </li>
+
                             
                             <!-- Communication -->
                             <li class="nav-item mt-3">
@@ -384,24 +398,7 @@
                             </nav>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <!-- Quick Actions -->
-                            <div class="dropdown">
-                                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    <i class="fas fa-plus me-1"></i>Quick Actions
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('admin.berita.create') }}">
-                                        <i class="fas fa-newspaper me-2"></i>Tambah Berita
-                                    </a></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-images me-2"></i>Upload Galeri
-                                    </a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-cog me-2"></i>Pengaturan
-                                    </a></li>
-                                </ul>
-                            </div>
+
                             
                             <!-- Current Time -->
                             <div class="text-muted small">
