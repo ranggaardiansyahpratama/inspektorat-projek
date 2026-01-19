@@ -6,11 +6,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\HomeController;
 
 // Homepage
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Admin Authentication Routes
 Route::prefix('admin')->name('admin.')->group(function () {
