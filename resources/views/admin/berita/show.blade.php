@@ -62,7 +62,7 @@
                         <div class="mb-4">
                             <h5>Konten</h5>
                             <div class="content-body">
-                                {!! nl2br(e($berita->konten)) !!}
+                                {!! $berita->konten !!}
                             </div>
                         </div>
                     </div>

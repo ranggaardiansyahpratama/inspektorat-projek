@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Berita extends Model
 {
@@ -41,10 +42,8 @@ class Berita extends Model
     // Accessor untuk excerpt otomatis
     public function getExcerptAttribute($value)
     {
-        if ($value) {
-            return $value;
-        }
-        return substr(strip_tags($this->konten), 0, 150) . '...';
+        $text = $value ?: $this->konten;
+        return Str::limit(strip_tags($text), 150);
     }
 
     // Increment views

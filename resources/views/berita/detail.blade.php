@@ -366,8 +366,8 @@
                     <div><i class="fas fa-eye"></i>{{ $berita->views }} kali dibaca</div>
                 </div>
 
-                <div class="content">
-                    {!! nl2br(e($berita->konten)) !!}
+                <div class="content-body">
+                    {!! $berita->konten !!}
                 </div>
 
                 <!-- Social Share -->
