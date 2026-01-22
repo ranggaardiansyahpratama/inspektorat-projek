@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use App\Models\Galeri;
 use App\Models\Kontak;
+use App\Models\StatistikPengunjung;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -24,19 +25,36 @@ class DashboardController extends Controller
         // Kontak masuk terbaru
         $kontakTerbaru = Kontak::latest()->take(5)->get();
 
-        // Data untuk chart pengunjung (dummy data for now)
-        $chartData = collect([
-            ['tanggal' => '10/10', 'pengunjung' => 45, 'page_views' => 120],
-            ['tanggal' => '11/10', 'pengunjung' => 52, 'page_views' => 145],
-            ['tanggal' => '12/10', 'pengunjung' => 38, 'page_views' => 98],
-            ['tanggal' => '13/10', 'pengunjung' => 61, 'page_views' => 167],
-            ['tanggal' => '14/10', 'pengunjung' => 49, 'page_views' => 134],
-            ['tanggal' => '15/10', 'pengunjung' => 57, 'page_views' => 156],
-            ['tanggal' => '16/10', 'pengunjung' => 63, 'page_views' => 189]
-        ]);
+        // Data untuk chart pengunjung (Real data)
+        $last7Days = collect();
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subDays($i)->format('Y-m-d');
+            $last7Days->put($date, [
+                'tanggal' => now()->subDays($i)->format('d/m'),
+                'pengunjung' => 0,
+                'page_views' => 0
+            ]);
+        }
 
-        // Total pengunjung bulan ini (dummy data)
-        $totalPengunjungBulanIni = 1256;
+        $realStats = StatistikPengunjung::where('tanggal', '>=', now()->subDays(6)->toDateString())
+            ->orderBy('tanggal', 'asc')
+            ->get();
+
+        foreach ($realStats as $stat) {
+            $dateString = $stat->tanggal->format('Y-m-d');
+            if ($last7Days->has($dateString)) {
+                $last7Days->put($dateString, [
+                    'tanggal' => $stat->tanggal->format('d/m'),
+                    'pengunjung' => $stat->jumlah_pengunjung,
+                    'page_views' => $stat->page_views
+                ]);
+            }
+        }
+
+        $chartData = $last7Days->values();
+
+        // Total pengunjung bulan ini
+        $totalPengunjungBulanIni = StatistikPengunjung::bulanIni()->sum('jumlah_pengunjung');
 
         return view('admin.dashboard', compact(
             'totalBerita',

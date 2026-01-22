@@ -41,7 +41,8 @@
     }
 
     .contact-info {
-        padding: 2rem 0;
+        line-height: 1.3;
+        margin-bottom: 0.rem;
     }
 
     .contact-item {
@@ -983,48 +984,16 @@
         </div> --}}
         
         <div class="contact-grid">
-            <!-- Contact Form -->
-            <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="form-title">Kirim Pesan</h3>
-                <p class="form-subtitle">Silakan isi formulir di bawah ini untuk menghubungi kami</p>
-
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" id="nama" name="nama" class="form-input" placeholder="Masukkan nama lengkap Anda" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan alamat email Anda" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telepon" class="form-label">Nomor Telepon</label>
-                        <input type="tel" id="telepon" name="telepon" class="form-input" placeholder="Masukkan nomor telepon Anda">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subjek" class="form-label">Subjek</label>
-                        <select id="subjek" name="subjek" class="form-select" required>
-                            <option value="">Pilih subjek pesan</option>
-                            <option value="pengaduan">Pengaduan</option>
-                            <option value="informasi">Permintaan Informasi</option>
-                            <option value="saran">Saran dan Masukan</option>
-                            <option value="kerjasama">Kerjasama</option>
-                            <option value="lainnya">Lainnya</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pesan" class="form-label">Pesan</label>
-                        <textarea id="pesan" name="pesan" class="form-textarea" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="form-btn">
-                        <i class="fas fa-paper-plane"></i> Kirim Pesan
-                    </button>
-                </form>
+            <!-- SKM Survey Link -->
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+                <h3 class="form-title">Survei Kepuasan Masyarakat (SKM)</h3>
+                <p class="form-subtitle">Silakan klik tombol di bawah ini untuk mengisi Survei Kepuasan Masyarakat melalui sistem E-SKM Kota Tasikmalaya</p>
+                
+                <div style="margin-top: 2rem;">
+                    <a href="https://e-skm.tasikmalayakota.go.id/home/kuis/100.01-triwulan-1-tahun-2025" target="_blank" class="form-btn" style="text-decoration: none; display: inline-block; width: auto; min-width: 250px;">
+                        <i class="fas fa-external-link-alt"></i> Isi Survei Kepuasan
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -1134,70 +1103,9 @@
 
 @push('scripts')
 <script>
-    // Contact form handling
+    // Mobile Menu & AOS initialization (if any) or other scripts
     document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(this);
-                const formObject = {};
-                formData.forEach((value, key) => {
-                    formObject[key] = value;
-                });
-                
-                // Simple validation
-                if (!formObject.nama || !formObject.email || !formObject.subjek || !formObject.pesan) {
-                    showAlert('Mohon lengkapi semua field yang diperlukan', 'error');
-                    return;
-                }
-                
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(formObject.email)) {
-                    showAlert('Format email tidak valid', 'error');
-                    return;
-                }
-                
-                // Submit form
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-                submitBtn.disabled = true;
-                
-                // Send to backend
-                fetch('{{ route("kontak.store") }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formObject)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        showAlert(data.message, 'success');
-                        this.reset();
-                    } else {
-                        showAlert(data.message || 'Terjadi kesalahan saat mengirim pesan', 'error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    showAlert('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.', 'error');
-                })
-                .finally(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
-            });
-        }
+        // Form is replaced with direct link, no handling needed
     });
 
     // Alert function

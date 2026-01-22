@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('statistik_pengunjungs');
+        Schema::dropIfExists('statistik_pengunjung');
+        
         Schema::create('statistik_pengunjung', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal')->unique();

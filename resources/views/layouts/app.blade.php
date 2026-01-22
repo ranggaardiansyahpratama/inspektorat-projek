@@ -239,7 +239,7 @@
 
         /* Footer Styles */
         .footer {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: #253241;
             color: white;
             padding: 3rem 0 1rem;
             margin-top: 0;
@@ -259,9 +259,9 @@
         }
 
         .footer-section h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.2rem;
-            color: #ecf0f1;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -283,26 +283,28 @@
         .contact-info {
             display: flex;
             align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
         }
 
         .contact-info i {
-            color: #1e40af;
-            width: 18px;
-            height: 18px;
+            color: #3b82f6;
+            width: 20px;
+            height: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
-            margin-top: 0.1rem;
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
             flex-shrink: 0;
         }
 
         .contact-info span {
             flex: 1;
             word-break: break-word;
+            color: #ffffff;
+            font-size: 0.95rem;
         }
 
         .social-links {

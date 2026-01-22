@@ -66,32 +66,7 @@
 
 
 
-    <!-- Kontak Baru Stats -->
-    <div class="col-xl-3 col-md-6">
-        <div class="card stat-card danger h-100">
-            <div class="card-body p-4">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="flex-grow-1">
-                        <div class="text-sm fw-medium text-muted text-uppercase tracking-wider mb-2">
-                            Kontak Baru
-                        </div>
-                        <div class="d-flex align-items-baseline">
-                            <div class="h3 fw-bold text-gray-900 mb-0">{{ number_format($totalKontakMasuk) }}</div>
-                            <div class="ms-2 text-sm text-danger">
-                                <i class="fas fa-arrow-down me-1"></i>-5%
-                            </div>
-                        </div>
-                        <div class="text-sm text-muted mt-1">dari bulan lalu</div>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <div class="rounded-lg bg-danger bg-opacity-10 p-3">
-                            <i class="fas fa-envelope text-danger fa-lg"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <div class="row">
@@ -147,7 +122,7 @@
 
 <div class="row">
     <!-- Berita Terbaru -->
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">
@@ -191,53 +166,6 @@
                         <a href="{{ route('admin.berita.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus me-1"></i>Tambah Berita
                         </a>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
-
-    <!-- Kontak Masuk Terbaru -->
-    <div class="col-lg-6">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-envelope me-2"></i>
-                    Kontak Masuk Terbaru
-                </h6>
-                <a href="{{ route('admin.kontak.index') }}" class="btn btn-primary btn-sm">
-                    <i class="fas fa-envelope me-1"></i>Lihat Semua
-                </a>
-            </div>
-            <div class="card-body">
-                @if($kontakTerbaru->count() > 0)
-                    @foreach($kontakTerbaru as $kontak)
-                    <div class="d-flex align-items-center py-2 border-bottom">
-                        <div class="flex-shrink-0">
-                            <div class="bg-success rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                <i class="fas fa-user text-white"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h6 class="mb-0">{{ $kontak->nama }}</h6>
-                            <small class="text-muted">
-                                {{ Str::limit($kontak->subjek, 30) }}
-                                <span class="badge bg-{{ $kontak->getStatusBadgeClass() }} ms-2">
-                                    {{ $kontak->getStatusLabel() }}
-                                </span>
-                            </small>
-                        </div>
-                        <div class="flex-shrink-0">
-                            <small class="text-muted">
-                                {{ $kontak->created_at->diffForHumans() }}
-                            </small>
-                        </div>
-                    </div>
-                    @endforeach
-                @else
-                    <div class="text-center py-3">
-                        <i class="fas fa-envelope fa-3x text-muted mb-3"></i>
-                        <p class="text-muted">Belum ada kontak masuk</p>
                     </div>
                 @endif
             </div>
