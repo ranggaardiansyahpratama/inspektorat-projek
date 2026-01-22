@@ -160,43 +160,7 @@
         margin-bottom: 1.5rem;
     }
 
-    .social-share {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid #eee;
-    }
 
-    .social-share h5 {
-        color: #2c3e50;
-        margin-bottom: 1rem;
-    }
-
-    .share-buttons {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .share-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
-        text-decoration: none;
-        color: white;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .share-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        color: white;
-    }
-
-    .share-fb { background: #1877F2; }
-    .share-twitter { background: #1DA1F2; }
-    .share-wa { background: #25D366; }
 
     .related-news {
         padding: 4rem 0;
@@ -290,9 +254,7 @@
             padding: 2rem;
         }
         
-        .share-buttons {
-            flex-direction: column;
-        }
+
     }
 </style>
 @endpush
@@ -323,10 +285,7 @@
                         <i class="fas fa-calendar"></i>
                         {{ $berita->created_at->format('d F Y') }}
                     </div>
-                    <div>
-                        <i class="fas fa-eye"></i>
-                        {{ $berita->views }} kali dibaca
-                    </div>
+
                     <div>
                         <i class="fas fa-clock"></i>
                         {{ $berita->created_at->format('H:i') }} WIB
@@ -363,31 +322,14 @@
                 
                 <div class="meta">
                     <div><i class="fas fa-calendar"></i>{{ $berita->created_at->format('d F Y, H:i') }} WIB</div>
-                    <div><i class="fas fa-eye"></i>{{ $berita->views }} kali dibaca</div>
+
                 </div>
 
                 <div class="content-body">
                     {!! $berita->konten !!}
                 </div>
 
-                <!-- Social Share -->
-                <div class="social-share">
-                    <h5>Bagikan Berita Ini:</h5>
-                    <div class="share-buttons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" 
-                           target="_blank" class="share-btn share-fb">
-                            <i class="fab fa-facebook-f"></i> Facebook
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?text={{ urlencode($berita->judul) }}&url={{ urlencode(request()->fullUrl()) }}" 
-                           target="_blank" class="share-btn share-twitter">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </a>
-                        <a href="https://wa.me/?text={{ urlencode($berita->judul . ' - ' . request()->fullUrl()) }}" 
-                           target="_blank" class="share-btn share-wa">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

@@ -148,75 +148,7 @@
         margin-bottom: 0.5rem;
     }
 
-    .share-section {
-        background: #E9F8F9;
-        padding: 2rem;
-        border-radius: 16px;
-        margin: 3rem 0;
-        text-align: center;
-    }
 
-    .share-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 1rem;
-    }
-
-    .share-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .share-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        outline: none;
-        border: none;
-    }
-
-    .share-btn:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .share-btn:active {
-        transform: translateY(-1px);
-        outline: none;
-    }
-
-    .share-btn.facebook {
-        background: #3b5998;
-        color: white;
-    }
-
-    .share-btn.twitter {
-        background: #1da1f2;
-        color: white;
-    }
-
-    .share-btn.whatsapp {
-        background: #25d366;
-        color: white;
-    }
-
-    .share-btn.telegram {
-        background: #0088cc;
-        color: white;
-    }
-
-    .share-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
 
     .related-news {
         background: #E9F8F9;
@@ -336,14 +268,7 @@
             font-size: 1rem;
         }
         
-        .share-buttons {
-            gap: 0.5rem;
-        }
-        
-        .share-btn {
-            padding: 0.6rem 1rem;
-            font-size: 0.9rem;
-        }
+
         
         .related-grid {
             grid-template-columns: 1fr;
@@ -384,10 +309,7 @@
                     <i class="fas fa-user"></i>
                     <span>Admin Inspektorat</span>
                 </div>
-                <div class="meta-item">
-                    <i class="fas fa-eye"></i>
-                    <span>1,234 views</span>
-                </div>
+
             </div>
         </div>
     </div>
@@ -491,24 +413,7 @@
                 </p>
             </div>
 
-            <!-- Share Section -->
-            <div class="share-section" data-aos="fade-up">
-                <h3 class="share-title">Bagikan Berita Ini</h3>
-                <div class="share-buttons">
-                    <a href="#" class="share-btn facebook">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="#" class="share-btn twitter">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="#" class="share-btn whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="#" class="share-btn telegram">
-                        <i class="fab fa-telegram"></i> Telegram
-                    </a>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -563,30 +468,6 @@
 
 @push('scripts')
 <script>
-    // Share functionality
-    document.querySelectorAll('.share-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const url = window.location.href;
-            const title = document.querySelector('.article-title').textContent;
-            
-            let shareUrl = '';
-            
-            if (this.classList.contains('facebook')) {
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-            } else if (this.classList.contains('twitter')) {
-                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
-            } else if (this.classList.contains('whatsapp')) {
-                shareUrl = `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`;
-            } else if (this.classList.contains('telegram')) {
-                shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
-            }
-            
-            if (shareUrl) {
-                window.open(shareUrl, '_blank', 'width=600,height=400');
-            }
-        });
-    });
+
 </script>
 @endpush
